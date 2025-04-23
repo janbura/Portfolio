@@ -1,32 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name - Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; max-width: 800px; margin: auto; }
-    h1 { text-align: center; }
-    ul { list-style-type: none; padding: 0; }
-    li { margin: 1rem 0; }
-    a { text-decoration: none; font-weight: bold; color: #0366d6; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    .header {
+      text-align: center;
+    }
+    .profile-img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin-bottom: 0.2rem;
+    }
+    p.subtitle {
+      font-style: italic;
+      color: gray;
+    }
+    .project {
+      background: white;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    .project h2 {
+      margin-top: 0;
+    }
+    .project a {
+      text-decoration: none;
+      color: #0366d6;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 <body>
-  <h1>My GitHub Repositories</h1>
-  <ul id="repo-list">Loading...</ul>
+  <div class="header">
+    <img src="profile.jpg" alt="Your Name" class="profile-img" />
+    <h1>Your Name</h1>
+    <p class="subtitle">Software Developer | Portfolio</p>
+  </div>
 
-  <script>
-    fetch('https://api.github.com/users/YOUR_USERNAME/repos')
-      .then(response => response.json())
-      .then(data => {
-        const list = document.getElementById('repo-list');
-        list.innerHTML = '';
-        data.forEach(repo => {
-          const item = document.createElement('li');
-          item.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a> - ${repo.description || 'No description'}`;
-          list.appendChild(item);
-        });
-      });
-  </script>
+  <!-- Project Template -->
+  <div class="project">
+    <h2>Project 1: [Title]</h2>
+    <p>[Short description of your project]</p>
+    <p><a href="https://github.com/YOUR_USERNAME/PROJECT_REPO" target="_blank">View on GitHub</a></p>
+    <iframe src="projects/project1.pdf"></iframe>
+  </div>
+
+  <div class="project">
+    <h2>Project 2: [Title]</h2>
+    <p>[Description]</p>
+    <p><a href="https://github.com/YOUR_USERNAME/PROJECT_REPO">View on GitHub</a></p>
+    <iframe src="projects/project2.pdf"></iframe>
+  </div>
+
+  <!-- ... 6 projects -->
+</body>
+</html>
 </body>
 </html>
